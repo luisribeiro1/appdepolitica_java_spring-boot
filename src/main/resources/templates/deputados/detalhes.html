@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{template.html}">
+<head>
+  <title>Deputado</title>
+</head>
+<body>
+<div layout:fragment="conteudo">
+
+  <h1 class="fs-3 mt-5 mb-3">Deputado</h1>
+
+  <section class="principal2">
+
+    <div class="cardDeputado" th:each="deputado : ${deputados}">
+      <img th:src="${ deputado.dados.UltimoStatus.urlFoto }" th:alt="${deputado.dados.UltimoStatus.nome}">
+
+      <ul class="list-group">
+        <li class="list-group-item"><strong th:text="${deputado.dados.ultimoStatus.nome}"></strong></li>
+        <li class="list-group-item">
+            <span class="badge bg-secondary" th:text="${deputado.dados.UltimoStatus.siglaPartido}"></span> &nbsp;
+            <span class="badge bg-secondary" th:text="${deputado.dados.UltimoStatus.siglaUf}"></span> &nbsp;
+            <span class="badge bg-primary" th:text="${deputado.dados.UltimoStatus.idLegislatura + 'ª Legislatura'}"></span>
+        </li>
+        <li class="list-group-item small" th:text="${deputado.dados.UltimoStatus.email}"></li>
+        <li class="list-group-item small">
+          <i class="bi bi-star"></i>
+          <i class="bi bi-star"></i>
+          <i class="bi bi-star"></i>
+          <i class="bi bi-star"></i>
+          <i class="bi bi-star"></i>
+        </li>
+      </ul>
+
+    </div>
+
+    <h2 class="h4 mt-5">Proposições</h2>
+    <div class="alert alert-light">
+      <ul th:each="proposicaoDetalhes : ${proposicoesDetalhes}">
+        <li>
+          <strong th:text="${proposicaoDetalhes.proposicao.descricaoTipo + ' &nbsp; nº: ' +
+          proposicaoDetalhes.proposicao.numero + '&nbsp;/&nbsp;' +
+           proposicaoDetalhes.proposicao.ano}"> </strong><br>
+          <span th:text="${proposicaoDetalhes.proposicao.ementa}"></span>
+        </li>
+      </ul>
+    </div>
+
+    <h2 class="h4 mt-5">Despesas</h2>
+    <div class="alert alert-light">
+      <div class="d-flex justify-content-between" th:each="despesa : ${despesas.dados}">
+
+          <strong th:text="${despesa.tipoDespesa}"> </strong><br>
+          <span th:text="${despesa.valorDocumento}"></span>
+
+      </div>
+    </div>
+
+  </section>
+
+</div>
+</body>
+</html>

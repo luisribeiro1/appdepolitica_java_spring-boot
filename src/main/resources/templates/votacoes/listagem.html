@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{template.html}">
+<head>
+    <title>Relação das votações no Congresso Nacional</title>
+</head>
+<body>
+<div layout:fragment="conteudo">
+    <!--    <div th:text="${info.get().dataInicio}"></div>-->
+
+    <h1 class="fs-3 mt-5 mb-3">Votações em 2023</h1>
+
+    <section class="principal">
+
+        <div class="card" th:each="votacao : ${votacoes}">
+            <i class="bi bi-stack fs-2"></i>
+            <div>
+                <small>
+                    <span th:text="${#temporals.format(votacao.data,'dd/MM/yyyy') }"></span><br>
+                    <span class="fw-bold" th:text="${votacao.descricao}"></span><br>
+                    <div th:each="proposicao : ${votacao.votacoesProposicoes}">
+                        <span th:text="${proposicao.ementa}"></span>
+                    </div>
+                    <br>
+                    <span class="badge bg-primary" th:text="${votacao.votosSim + ' votam SIM'}"></span>
+                    <span class="badge bg-danger" th:text="${votacao.votosNao + ' votaram NÃO'}"></span>
+                    <a th:href="@{/comovotou?id={apelido}(apelido=${votacao.id})}">Como votou cada deputado</a>
+                </small>
+            </div>
+        </div>
+
+    </section>
+
+</div>
+</body>
+</html>

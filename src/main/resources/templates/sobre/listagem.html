@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{template.html}">
+<head>
+    <title>Sobre o site</title>
+</head>
+<body>
+<div layout:fragment="conteudo">
+<!--    <div th:text="${info.get().dataInicio}"></div>-->
+
+    <h1 class="fs-3 mt-5 mb-3">Sobre o site</h1>
+
+    <section class="principal3">
+
+        <div class="alert alert-light">
+            <p>Este aplicativo tem como finalidade disponibilizar informações da atividade parlamentar no Brasil. Além da consulta das informações, os usuários poderão:</p>
+            <ul>
+                <li><strong>Avaliar</strong> as ações dos parlamentares (1 a 5 estrelas)</li>
+                <li><strong>Inserir</strong> comentários (pré-estabelecidos pelo site)</li>
+                <li><strong>Acompanhar</strong> o resultado de votação dos projetos de lei no Congresso mostrando como votou cada parlamentar</li>
+                <li><strong>Votar</strong>, de foma simbólica, nos projetos que foram votados no Congresso Nacional. Com isso, o usuário poderá comparar o seu voto com os demais parlamentares e assim descobrir quais deles votam como o usuário votaria. Isto poderá ser relevante para ajudar o usuário a escolher seus candidatos em futuras eleições no Brasil.</li>
+            </ul>
+        </div>
+
+    </section>
+
+</div>
+</body>
+</html>

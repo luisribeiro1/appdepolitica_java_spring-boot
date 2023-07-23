@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{template.html}">
+<head>
+    <title>Lista de Deputados</title>
+</head>
+<body>
+<div layout:fragment="conteudo">
+
+    <div class="alert alert-light">
+        <p>Este aplicativo tem como finalidade disponibilizar informações da atividade parlamentar no Brasil. Além da consulta das informações, os usuários poderão:</p>
+        <ul>
+            <li><strong>Avaliar</strong> as ações dos parlamentares (1 a 5 estrelas)</li>
+            <li><strong>Inserir</strong> comentários (pré-estabelecidos pelo site)</li>
+            <li><strong>Acompanhar</strong> o resultado de votação dos projetos de lei no Congresso mostrando como votou cada parlamentar</li>
+            <li><strong>Votar</strong>, de foma simbólica, nos projetos que foram votados no Congresso Nacional. Com isso, o usuário poderá comparar o seu voto com os demais parlamentares e assim descobrir quais deles votam como o usuário votaria. Isto poderá ser relevante para ajudar o usuário a escolher seus candidatos em futuras eleições no Brasil.</li>
+        </ul>
+    </div>
+
+    <section class="principal">
+        <div class="card">
+            <i class="bi bi-stack fs-2"></i>
+            <div>
+                <h4>Legislaturas</h4>
+                <small><span class="badge bg-primary">57ª</span> &nbsp; De 01/02/2023 a 31/01/2027 </small>
+                <small><span class="badge bg-info">56ª</span> &nbsp; De 01/02/2018 a 31/01/2023</small>
+                <small><span class="badge bg-info">55ª</span> &nbsp; De 01/02/2014 a 31/01/2018</small>
+                <small><span class="badge bg-info">54ª</span> &nbsp; De 01/02/2008 a 31/01/2014</small>
+            </div>
+        </div>
+        <div class="card">
+            <i class="bi bi-stack fs-2"></i>
+            <div>
+                <h4>Partidos</h4>
+                <small class="partidos">
+                    <span class="badge">PL</span>
+                    <span class="badge">PT</span>
+                    <span class="badge">MDB</span>
+                    <span class="badge">REPUBLICANOS</span>
+                    <span class="badge">CIDADANIA</span>
+                    <span class="badge">UNIÃO BRASIL</span>
+                    <span class="badge">PSC</span>
+                    <span class="badge">REDE</span>
+                    <span class="badge">PSOL</span>
+                    <span class="badge">PP</span>
+                    <span class="badge">PSB</span>
+                    <span class="badge">PCdoB</span>
+                    <span class="badge">PDT</span>
+                    <span class="badge">NOVO</span>
+                    <span class="badge">PSDB</span>
+                    <span class="badge">AVANTE</span>
+                    <span class="badge">PATRIOTA</span>
+                    <span class="badge">PODE</span>
+                    <span class="badge">PSD</span>
+                </small>
+            </div>
+        </div>
+        <div class="card">
+            <i class="bi bi-stack fs-2"></i>
+            <div>
+                <h4>Deputados Federais</h4>
+                <small><span class="badge bg-primary">57ª</span> &nbsp; De 01/02/2023 a 31/01/2027 </small>
+                <small><span class="badge bg-info">56ª</span> &nbsp; De 01/02/2018 a 31/01/2023</small>
+                <small><span class="badge bg-info">55ª</span> &nbsp; De 01/02/2014 a 31/01/2018</small>
+                <small><span class="badge bg-info">54ª</span> &nbsp; De 01/02/2008 a 31/01/2014</small>
+                <small><a href="deputados?idLeg=57">Ver Mais</a></small>
+            </div>
+        </div>
+
+    </section>
+
+    <section class="lateral">
+        <i class="bi bi-star"></i>
+    </section>
+
+</div>
+</body>
+</html>

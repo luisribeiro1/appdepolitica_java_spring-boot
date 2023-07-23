@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en"
+    xmlns:th="http://thymeleaf.org"
+    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/estilos.css" th:href="@{/css/estilos.css}">
+</head>
+<body>
+    <div class="website">
+        <aside>
+            <section>
+                <div class="fs-4 mb-0"><strong>App</strong>de<strong>Política</strong></div>
+                <div class="small">Informações da atividade <br>parlamentar no Brasil.</div>
+                <nav>
+                    <ul>
+                        <li><a href="/"><i class="bi bi-stack"></i> Home</a></li>
+                        <li><a href="votacao"><i class="bi bi-stack"></i> Votação</a></li>
+                        <li><a href="legislaturas"><i class="bi bi-stack"></i> Legislaturas</a></li>
+                        <li><a href="partidos"><i class="bi bi-stack"></i> Partidos</a></li>
+                        <li><a href="deputados?idLeg=57"><i class="bi bi-stack"></i> Deputados</a></li>
+                        <li><a href="proposicoes"><i class="bi bi-stack"></i> Proposições</a></li>
+                        <li><a href="frentes"><i class="bi bi-stack"></i> Frentes</a></li>
+                        <li><a href="sobre"><i class="bi bi-stack"></i> Sobre o site</a></li>
+
+                    </ul>
+                </nav>
+            </section>
+        </aside>
+        <main>
+            <div class="alert alert-warning small py-2 d-flex align-items-center">
+                <i class="bi bi-exclamation-triangle-fill fs-4"></i> &nbsp;&nbsp;&nbsp; <span>Este site usa dados públicos e abertos da Câmara dos Deputados. <a target="_blank" href="https://dadosabertos.camara.leg.br">Saiba mais</a></span>
+            </div>
+            <div layout:fragment="conteudo"></div>
+        </main>
+
+    </div>
+
+</body>
+</html>

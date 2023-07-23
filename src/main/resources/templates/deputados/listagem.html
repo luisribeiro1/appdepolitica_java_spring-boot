@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{template.html}">
+<head>
+  <title>Lista de Deputados</title>
+</head>
+<body>
+<div layout:fragment="conteudo">
+
+  <h1 class="fs-3 mt-5 mb-3">Deputados da
+    <span th:text="${info.get().id}"></span>ª legislatura -
+    <span th:text="${#temporals.format(info.get().dataInicio, 'dd/MM/yyyy')}"></span> a
+    <span th:text="${#temporals.format(info.get().dataFim, 'dd/MM/yyyy')}"></span>
+  </h1>
+
+  <section class="principal">
+
+    <div class="cardDeputado" th:each="deputado : ${lista}">
+      <img th:src="${ deputado.urlFoto }" th:alt="${deputado.nome}">
+
+      <ul class="list-group">
+        <li class="list-group-item"><strong th:text="${deputado.nome}"></strong></li>
+        <li class="list-group-item"><span class="badge bg-secondary" th:text="${deputado.mandatos[0].siglaPartido}"></span> &nbsp;
+          <span class="badge bg-secondary" th:text="${deputado.mandatos[0].siglaUf}"></span></li>
+        <li class="list-group-item small" th:text="${deputado.email}"></li>
+        <li class="list-group-item small">
+          <i class="bi bi-star"></i>
+          <i class="bi bi-star"></i>
+          <i class="bi bi-star"></i>
+          <i class="bi bi-star"></i>
+          <i class="bi bi-star"></i> &nbsp;
+          <a th:href="@{/deputado?id={apelido}(apelido=${deputado.id})}">Atividade parlamentar</a></li>
+      </ul>
+
+    </div>
+
+  </section>
+
+</div>
+</body>
+</html>

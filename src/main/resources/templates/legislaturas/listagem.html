@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{template.html}">
+<head>
+    <title>Relação das legislaturas no Congresso Nacional</title>
+</head>
+<body>
+<div layout:fragment="conteudo">
+<!--    <div th:text="${info.get().dataInicio}"></div>-->
+
+    <h1 class="fs-3 mt-5 mb-3">Todas as legislaturas no Brasil desde 1826</h1>
+
+    <section class="principal">
+
+        <div class="card" th:each="legislaturas : ${lista}">
+            <i class="bi bi-stack fs-2"></i>
+            <div>
+                <small>
+                    <span class="badge bg-primary" th:text="${legislaturas.id} + 'ª'"></span> &nbsp; De
+                    <span th:text="${#temporals.format(legislaturas.dataInicio,'dd/MM/yyyy') }"></span> a
+                    <span th:text="${#temporals.format(legislaturas.dataFim,'dd/MM/yyyy') }"></span> |
+                    <a th:href="@{/deputados?idLeg={apelido}(apelido=${legislaturas.id})}">Lista de Deputados</a>
+                </small>
+            </div>
+        </div>
+
+    </section>
+
+</div>
+</body>
+</html>
